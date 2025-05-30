@@ -5,15 +5,19 @@
   "scripts": {
     "start": "node dist/server.js",
     "build": "tsc",
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "tw:watch": "npx tailwindcss -i ./src/input.css -o ./public/css/styles.css --watch",
+    "tw:build": "npx tailwindcss -i ./src/input.css -o ./public/css/styles.css --minify"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "description": "",
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
     "express": "^5.1.0",
     "express-handlebars": "^8.0.2",
+    "tailwindcss": "^4.1.8",
     "zod": "^3.25.41"
   },
   "devDependencies": {
