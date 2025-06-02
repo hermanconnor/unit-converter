@@ -1,6 +1,7 @@
 import path from 'node:path';
 import express from 'express';
 import { engine } from 'express-handlebars';
+import homeRoutes from './routes/home';
 
 const app = express();
 
@@ -18,5 +19,12 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(express.urlencoded({ extended: true }));
+
+app.use((req, res, next) => {
+  res.locals.year = new Date().getFullYear();
+  next();
+});
+
+app.use('/', homeRoutes);
 
 export default app;
