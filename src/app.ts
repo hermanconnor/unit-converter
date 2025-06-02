@@ -2,6 +2,8 @@ import path from 'node:path';
 import express from 'express';
 import { engine } from 'express-handlebars';
 import homeRoutes from './routes/home';
+import errorHandler from './middleware/errorMiddleware';
+import notFound from './middleware/notFound';
 
 const app = express();
 
@@ -26,5 +28,8 @@ app.use((req, res, next) => {
 });
 
 app.use('/', homeRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 export default app;
