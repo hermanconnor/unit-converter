@@ -2,6 +2,7 @@ import path from 'node:path';
 import express from 'express';
 import { engine } from 'express-handlebars';
 import homeRoutes from './routes/home';
+import lengthRoutes from './routes/length';
 import errorHandler from './middleware/errorMiddleware';
 import notFound from './middleware/notFound';
 
@@ -12,7 +13,7 @@ app.engine(
   engine({
     defaultLayout: 'main',
     layoutsDir: path.join(__dirname, 'views', 'layouts'),
-    extname: '.hbs',
+    extname: '.handlebars',
   }),
 );
 
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', homeRoutes);
+app.use('/', lengthRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

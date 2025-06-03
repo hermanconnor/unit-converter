@@ -11,7 +11,7 @@ server.listen(PORT, () => {
 
 // --- Graceful Shutdown ---
 const gracefulShutdown = async (signal: string) => {
-  console.log(`Received signal: ${signal}. Initiating graceful shutdown...`);
+  console.log(`\nReceived signal: ${signal}. Initiating graceful shutdown...`);
 
   server.close((err) => {
     if (err) {
