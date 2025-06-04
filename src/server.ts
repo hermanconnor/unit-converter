@@ -1,17 +1,15 @@
-import http from 'node:http';
 import app from './app';
+import { debug } from 'node:console';
 
 const PORT = process.env.PORT || 5000;
 
-const server = http.createServer(app);
-
-server.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
 // --- Graceful Shutdown ---
 const gracefulShutdown = async (signal: string) => {
-  console.log(`\nReceived signal: ${signal}. Initiating graceful shutdown...`);
+  debug(`\nReceived signal: ${signal}. Initiating graceful shutdown...`);
 
   server.close((err) => {
     if (err) {

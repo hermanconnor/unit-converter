@@ -14,6 +14,17 @@ app.engine(
     defaultLayout: 'main',
     layoutsDir: path.join(__dirname, 'views', 'layouts'),
     extname: '.handlebars',
+    helpers: {
+      isActive: (
+        currentPage: string,
+        targetPage: string,
+        options: Handlebars.HelperOptions,
+      ) => {
+        return currentPage === targetPage
+          ? options.fn(this)
+          : options.inverse(this);
+      },
+    },
   }),
 );
 
@@ -29,7 +40,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', homeRoutes);
-app.use('/', lengthRoutes);
+app.use('/length', lengthRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

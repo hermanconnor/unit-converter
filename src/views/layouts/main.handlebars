@@ -22,6 +22,52 @@
       </div>
     </header>
 
+    <!-- Navbar -->
+    <nav class='flex justify-center mt-4'>
+      <ul class='flex items-center space-x-4 text-blue-600'>
+        <li>
+          {{#isActive currentPage 'home'}}
+            <a href='/' class='text-blue-500 font-bold'>Home</a>
+          {{else}}
+            <a href='/' class='text-gray-700 hover:text-blue-500'>Home</a>
+          {{/isActive}}
+        </li>
+        <li>
+          {{#isActive currentPage 'temperature'}}
+            <a
+              href='/temperature'
+              class='text-blue-500 font-bold'
+            >Temperature</a>
+          {{else}}
+            <a
+              href='/temperature'
+              class='text-gray-700 hover:text-blue-500'
+            >Temperature</a>
+          {{/isActive}}
+        </li>
+        <li>
+          {{#isActive currentPage 'length'}}
+            <a href='/length' class='text-blue-500 font-bold'>Length</a>
+          {{else}}
+            <a
+              href='/length'
+              class='text-gray-700 hover:text-blue-500'
+            >Length</a>
+          {{/isActive}}
+        </li>
+        <li>
+          {{#isActive currentPage 'weight'}}
+            <a href='/weight' class='text-blue-500 font-bold'>Weight</a>
+          {{else}}
+            <a
+              href='/weight'
+              class='text-gray-700 hover:text-blue-500'
+            >Weight</a>
+          {{/isActive}}
+        </li>
+      </ul>
+    </nav>
+
     <!-- Main Content -->
     <main class='flex-grow container mx-auto px-4 py-12'>
       {{{body}}}

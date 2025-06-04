@@ -5,7 +5,7 @@ import { convertLength } from '../utils/converters';
 
 const router = Router();
 
-router.get('/length', (req, res) => {
+router.get('/', (req, res) => {
   res.render('length', {
     title: 'Unit Converter - Length',
     currentPage: 'length',
@@ -13,7 +13,7 @@ router.get('/length', (req, res) => {
   });
 });
 
-router.post('/length', (req, res, next) => {
+router.post('/', (req, res, next) => {
   try {
     const parsedData = convertSchema.safeParse(req.body);
 
