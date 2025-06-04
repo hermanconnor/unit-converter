@@ -3,6 +3,7 @@ import express from 'express';
 import { engine } from 'express-handlebars';
 import homeRoutes from './routes/home';
 import lengthRoutes from './routes/length';
+import weightRoutes from './routes/weight';
 import errorHandler from './middleware/errorMiddleware';
 import notFound from './middleware/notFound';
 
@@ -41,6 +42,7 @@ app.use((req, res, next) => {
 
 app.use('/', homeRoutes);
 app.use('/length', lengthRoutes);
+app.use('/weight', weightRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

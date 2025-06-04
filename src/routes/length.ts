@@ -29,7 +29,7 @@ router.post('/', (req, res, next) => {
 
     const { value, fromUnit, toUnit } = parsedData.data;
 
-    const result = convertLength(value, fromUnit, toUnit).toFixed(3);
+    const result = convertLength(value, fromUnit, toUnit).toFixed(2);
 
     const fromAbbr = lengthAbbr[fromUnit];
     const toAbbr = lengthAbbr[toUnit];

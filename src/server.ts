@@ -1,5 +1,4 @@
 import app from './app';
-import { debug } from 'node:console';
 
 const PORT = process.env.PORT || 5000;
 
@@ -9,7 +8,7 @@ const server = app.listen(PORT, () => {
 
 // --- Graceful Shutdown ---
 const gracefulShutdown = async (signal: string) => {
-  debug(`\nReceived signal: ${signal}. Initiating graceful shutdown...`);
+  console.log(`\nReceived signal: ${signal}. Initiating graceful shutdown...`);
 
   server.close((err) => {
     if (err) {
