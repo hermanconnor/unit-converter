@@ -2,6 +2,7 @@ import path from 'node:path';
 import express from 'express';
 import { engine } from 'express-handlebars';
 import homeRoutes from './routes/home';
+import temperatureRoutes from './routes/temperature';
 import lengthRoutes from './routes/length';
 import weightRoutes from './routes/weight';
 import errorHandler from './middleware/errorMiddleware';
@@ -41,6 +42,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', homeRoutes);
+app.use('/temperature', temperatureRoutes);
 app.use('/length', lengthRoutes);
 app.use('/weight', weightRoutes);
 

@@ -24,3 +24,28 @@ export function convertLength(value: number, from: string, to: string): number {
 export function convertWeight(value: number, from: string, to: string): number {
   return (value * weightToBase[from]) / weightToBase[to];
 }
+
+export function convertTemperature(
+  value: number,
+  from: string,
+  to: string,
+): number {
+  if (from === to) return value;
+
+  if (from === 'celsius') {
+    if (to === 'fahrenheit') return (value * 9) / 5 + 32;
+    if (to === 'kelvin') return value + 273.15;
+  }
+
+  if (from === 'fahrenheit') {
+    if (to === 'celsius') return ((value - 32) * 5) / 9;
+    if (to === 'kelvin') return ((value - 32) * 5) / 9 + 273.15;
+  }
+
+  if (from === 'kelvin') {
+    if (to === 'celsius') return value - 273.15;
+    if (to === 'fahrenheit') return ((value - 273.15) * 9) / 5 + 32;
+  }
+
+  throw new Error('Invalid temperature conversion');
+}

@@ -35,3 +35,9 @@ export const weightUnits = [
   { value: 'ounces', label: 'Ounces (oz)' },
   { value: 'pounds', label: 'Pounds (lb)' },
 ];
+
+export const temperatureAbbr: Record<string, string> = {
+  celsius: '°C',
+  fahrenheit: '°F',
+  kelvin: 'K',
+};
