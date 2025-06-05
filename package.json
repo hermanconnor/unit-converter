@@ -4,8 +4,9 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server.js",
-    "build": "tsc",
+    "build": "tsc && npm run tw:build && npm run copy-views",
     "dev": "tsx watch src/server.ts",
+    "copy-views": "cp -r src/views dist/views",
     "tw:watch": "npx tailwindcss -i ./src/input.css -o ./public/css/styles.css --watch",
     "tw:build": "npx tailwindcss -i ./src/input.css -o ./public/css/styles.css --minify"
   },
