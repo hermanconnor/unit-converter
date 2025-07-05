@@ -36,6 +36,12 @@ export const weightUnits = [
   { value: 'pounds', label: 'Pounds (lb)' },
 ];
 
+export const temperatureUnits = [
+  { value: 'celsius', label: 'Celsius (m)' },
+  { value: 'fahrenheit', label: 'Fahrenheit (°F)' },
+  { value: 'kelvin', label: 'Kelvin (K)' },
+];
+
 export const temperatureAbbr: Record<string, string> = {
   celsius: '°C',
   fahrenheit: '°F',

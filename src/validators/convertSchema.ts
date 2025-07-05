@@ -5,3 +5,9 @@ export const convertSchema = z.object({
   fromUnit: z.string(),
   toUnit: z.string(),
 });
+
+export const temperatureSchema = z.object({
+  value: z.coerce.number(),
+  fromUnit: z.string(),
+  toUnit: z.string(),
+});

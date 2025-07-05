@@ -13,6 +13,7 @@
         id='value'
         required
         class='w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'
+        value='{{body.value}}'
       />
     </div>
 
@@ -28,9 +29,11 @@
           required
           class='w-full border border-gray-300 rounded px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500'
         >
-          <option value='celsius'>Celsius (°C)</option>
-          <option value='fahrenheit'>Fahrenheit (°F)</option>
-          <option value='kelvin'>Kelvin (K)</option>
+          {{#each units}}
+            <option value='{{this.value}}' {{#if (eq this.value ../body.fromUnit)}}selected{{/if}}>
+              {{this.label}}
+            </option>
+          {{/each}}
         </select>
       </div>
 
@@ -42,9 +45,11 @@
           required
           class='w-full border border-gray-300 rounded px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500'
         >
-          <option value='celsius'>Celsius (°C)</option>
-          <option value='fahrenheit'>Fahrenheit (°F)</option>
-          <option value='kelvin'>Kelvin (K)</option>
+          {{#each units}}
+            <option value='{{this.value}}' {{#if (eq this.value ../body.toUnit)}}selected{{/if}}>
+              {{this.label}}
+            </option>
+          {{/each}}
         </select>
       </div>
     </div>

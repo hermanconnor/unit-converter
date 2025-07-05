@@ -18,11 +18,11 @@ router.post('/', (req, res, next) => {
     const parsedData = convertSchema.safeParse(req.body);
 
     if (!parsedData.success) {
-      return res.render('length', {
+      return res.render('weight', {
         title: 'Unit Converter - Weight',
         currentPage: 'weight',
         units: weightUnits,
-        result: null,
+        body: req.body,
         error: parsedData.error.issues[0].message,
       });
     }

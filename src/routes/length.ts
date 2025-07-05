@@ -22,7 +22,7 @@ router.post('/', (req, res, next) => {
         title: 'Unit Converter - Length',
         currentPage: 'length',
         units: lengthUnits,
-        result: null,
+        body: req.body,
         error: parsedData.error.issues[0].message,
       });
     }
