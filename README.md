@@ -33,7 +33,7 @@ Convert between units of **temperature 🌡️**, **length 📏**, and **weight 
 1. **Clone the repo:**
 
 ```bash
-git clone https://github.com/your-username/unit-converter.git
+git clone https://github.com/hermanconnor/unit-converter.git
 cd unit-converter
 ```
 
